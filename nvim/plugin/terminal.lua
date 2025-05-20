@@ -45,6 +45,7 @@ vim.api.nvim_create_user_command('FloatTerminal', function()
     if vim.bo[state.floating.buf].buftype ~= 'terminal' then
       vim.cmd.terminal()
     end
+    vim.bo[state.floating.buf].scrollback = 100000
     vim.api.nvim_command 'startinsert'
   else
     vim.api.nvim_win_hide(state.floating.win)
