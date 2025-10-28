@@ -311,5 +311,7 @@ vim.api.nvim_command 'command! GitDiffFloating lua Open_git_diff_floating_window
 
 vim.cmd.hi 'clear MiniStatusLineFileName'
 vim.cmd.hi 'link MiniStatusLineFileName StatusLine'
+
+vim.cmd 'Copilot disable'
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
