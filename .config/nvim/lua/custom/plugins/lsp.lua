@@ -173,7 +173,11 @@ return {
         cmake = {},
         rust_analyzer = {},
         zls = {},
-        ols = {},
+        ols = {
+          init_options = {
+            enable_format = false,
+          },
+        },
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -227,6 +231,10 @@ return {
           end,
         },
       }
+
+      for server_name, config in pairs(servers) do
+        vim.lsp.config(server_name, config)
+      end
     end,
   },
 
